@@ -1,63 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Khalil Ayman | Portfolio</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
 
 body{
-background:#020617;
-color:white;
+font-family:Arial;
+margin:0;
+background:#f5f7fb;
+color:#333;
 }
 
 header{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
+background:#111827;
+color:white;
+padding:60px;
 text-align:center;
 }
 
-header h1{font-size:48px;}
-header p{color:#94a3b8;}
+header h1{
+font-size:40px;
+margin-bottom:10px;
+}
 
 nav{
-background:#020617;
-position:sticky;
-top:0;
-border-bottom:1px solid #1e293b;
+background:#1f2937;
 }
 
 nav ul{
 display:flex;
 justify-content:center;
 list-style:none;
+margin:0;
+padding:0;
 }
 
-nav li{margin:0 15px;}
+nav li{
+margin:0 20px;
+}
 
 nav a{
 color:white;
+text-decoration:none;
 padding:15px;
 display:block;
-text-decoration:none;
 }
 
-nav a:hover{color:#38bdf8;}
+nav a:hover{
+color:#38bdf8;
+}
 
 section{
 max-width:1100px;
 margin:auto;
-padding:80px 20px;
+padding:60px 20px;
 }
 
 h2{
 text-align:center;
 margin-bottom:40px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+margin-bottom:20px;
 }
 
 .grid{
@@ -66,109 +81,246 @@ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 
-.card{
-background:#0f172a;
-padding:20px;
-border-radius:10px;
+.skill{
+margin-bottom:20px;
+}
+
+.progress{
+background:#ddd;
+height:10px;
+border-radius:5px;
+}
+
+.progress div{
+background:#38bdf8;
+height:10px;
+border-radius:5px;
+}
+
+footer{
+background:#111827;
+color:white;
 text-align:center;
+padding:20px;
 }
 
-.gallery img{
-width:100%;
-border-radius:10px;
-cursor:pointer;
-}
-
-#viewer{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.9);
-display:none;
-justify-content:center;
-align-items:center;
-}
-
-#viewer img{
-max-width:90%;
-max-height:90%;
+a{
+color:#2563eb;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
-<h1>Khalil Ayman</h1>
-<p>Content Creator | Writer | Actor</p>
+
+<h1>Khalil Ayman Abdelaziz</h1>
+
+<p>Content Creator | Writer | Poet | Scenarist</p>
+
+<p>
+Haram St., Giza<br>
++201115002997<br>
+Khalil.aayousef@gmail.com
+</p>
+
 </header>
 
 <nav>
+
 <ul>
+
 <li><a href="#about">About</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#skills">Skills</a></li>
 <li><a href="#achievements">Achievements</a></li>
+<li><a href="#projects">Projects</a></li>
 <li><a href="#contact">Contact</a></li>
+
 </ul>
+
 </nav>
 
 <section id="about">
-<h2>About</h2>
-<div class="grid">
-<div class="card">Award-winning poet</div>
-<div class="card">Content creator</div>
-<div class="card">Actor & writer</div>
+
+<h2>Career Highlights</h2>
+
+<div class="card">
+
+<ul>
+
+<li>First place – Classical Poetry (Faculty of Commerce).</li>
+
+<li>First place – Classical Poetry (Tanta University 2015 & 2016).</li>
+
+<li>First place – Short Story (Gharbia Governorate).</li>
+
+<li>Ambassador of Tanta University in Egyptian Universities Competition.</li>
+
+</ul>
+
 </div>
+
+</section>
+
+<section id="education">
+
+<h2>Education</h2>
+
+<div class="card">
+
+<p><b>Bachelor of Commerce</b> – Accounting Department – English Section</p>
+
+<p>Tanta University – 2019</p>
+
+</div>
+
+<div class="card">
+
+<p>Faculty of Arts – Theater Sciences – Decoration Section</p>
+
+<p>Helwan University (Current Study)</p>
+
+</div>
+
+<div class="card">
+
+<p>Arab School of Cinema</p>
+
+<p>Higher Institute of Cinema – Cairo</p>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2>Skills</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Computer Skills</h3>
+
+<div class="skill">SQL<div class="progress"><div style="width:85%"></div></div></div>
+
+<div class="skill">Linux Server<div class="progress"><div style="width:80%"></div></div></div>
+
+<div class="skill">Excel / PowerPoint<div class="progress"><div style="width:90%"></div></div></div>
+
+</div>
+
+<div class="card">
+
+<h3>Creative Tools</h3>
+
+<div class="skill">CapCut Pro<div class="progress"><div style="width:95%"></div></div></div>
+
+<div class="skill">InShot<div class="progress"><div style="width:90%"></div></div></div>
+
+<div class="skill">Canva Pro<div class="progress"><div style="width:95%"></div></div></div>
+
+</div>
+
+<div class="card">
+
+<h3>Language</h3>
+
+<p>English Level B2A – British Academy</p>
+
+</div>
+
+</div>
+
 </section>
 
 <section id="achievements">
-<h2>Achievements</h2>
 
-<div class="grid gallery">
+<h2>Literary Achievements</h2>
 
-<img src="images/award1.jpg">
-<img src="images/award2.jpg">
-<img src="images/award3.jpg">
-<img src="images/award4.jpg">
-<img src="images/award5.jpg">
-<img src="images/award6.jpg">
-<img src="images/award7.jpg">
-<img src="images/award8.jpg">
-<img src="images/award9.jpg">
-<img src="images/award10.jpg">
+<div class="card">
+
+<ul>
+
+<li>University Ambassador for Egyptian Universities Competition – Ministry of Youth and Sports.</li>
+
+<li>Representative of Tanta University in Creativity Competition.</li>
+
+<li>Theatrical Composition Participation – Creativity 6 Competition.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<h2>Creative Works</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Short Film Scripts</h3>
+
+<a href="https://drive.google.com/file/d/1aeLtUCkgWUGnuYmayYFvfFtHO6Fvd8n-/view" target="_blank">View Work</a>
+
+</div>
+
+<div class="card">
+
+<h3>Novel – As if an Angel Awakened Me</h3>
+
+<a href="https://drive.google.com/file/d/1X-ASf6_zbiyZjJ6jNUF1tGXlCmvJr87l/view" target="_blank">Read</a>
+
+</div>
+
+<div class="card">
+
+<h3>Creative Script – Hala</h3>
+
+<a href="https://drive.google.com/file/d/16WOXSdBURBaNYtBwVX0eapmpQwrLS7IQ/view" target="_blank">View</a>
+
+</div>
+
+<div class="card">
+
+<h3>Acting Work – Hamdy</h3>
+
+<a href="https://drive.google.com/file/d/1NSrDmQoAIEYdwxF0rfLRu4s2VkS0HhDT/view" target="_blank">Watch</a>
+
+</div>
+
 </div>
 
 </section>
 
 <section id="contact">
+
 <h2>Contact</h2>
+
 <div class="card">
-📍 Giza, Egypt<br>
-📞 +201115002997<br>
-✉ Khalil.aayousef@gmail.com
+
+<p>Phone: +201115002997</p>
+
+<p>Email: Khalil.aayousef@gmail.com</p>
+
+<p>Location: Haram St., Giza – Egypt</p>
+
 </div>
+
 </section>
 
 <footer>
-© 2026 Khalil Ayman
+
+© 2026 Khalil Ayman Portfolio
+
 </footer>
 
-<div id="viewer" onclick="closeImage()">
-<img id="viewer-img">
-</div>
-
-<script>
-function openImage(src){
-document.getElementById("viewer").style.display="flex";
-document.getElementById("viewer-img").src=src;
-}
-
-function closeImage(){
-document.getElementById("viewer").style.display="none";
-}
-</script>
-
 </body>
+
 </html>
