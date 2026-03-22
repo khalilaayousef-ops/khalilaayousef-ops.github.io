@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Khalil Ayman | Portfolio</title>
+<title>Khalil Ayman | Creative Portfolio</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
 
 body{
-background:#f8fafc;
-color:#0f172a;
+background:#0a0a0a;
+color:#e5e5e5;
 line-height:1.7;
 }
 
@@ -18,48 +18,65 @@ line-height:1.7;
 nav{
 display:flex;
 justify-content:space-between;
+align-items:center;
 padding:20px 40px;
-background:white;
-position:sticky;
-top:0;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
+position:fixed;
+width:100%;
+background:rgba(10,10,10,0.7);
+backdrop-filter:blur(10px);
 }
 
 nav h1{
-font-size:20px;
+font-size:18px;
+letter-spacing:1px;
 }
 
 nav a{
 margin-left:20px;
+color:#aaa;
 text-decoration:none;
-color:#0f172a;
+transition:0.3s;
+}
+
+nav a:hover{
+color:white;
 }
 
 /* HERO */
 .hero{
-padding:120px 20px;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
 }
 
 .hero h2{
-font-size:42px;
+font-size:48px;
+font-weight:600;
 margin-bottom:10px;
 }
 
 .hero p{
-color:#64748b;
+color:#888;
+}
+
+.hero span{
+color:white;
 }
 
 /* SECTION */
 section{
 max-width:1000px;
 margin:auto;
-padding:80px 20px;
+padding:100px 20px;
 }
 
 h3{
-margin-bottom:30px;
-font-size:24px;
+font-size:22px;
+margin-bottom:40px;
+color:white;
 }
 
 /* GRID */
@@ -71,59 +88,84 @@ gap:20px;
 
 /* CARD */
 .card{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 5px 20px rgba(0,0,0,0.05);
+background:#111;
+padding:25px;
+border-radius:12px;
+border:1px solid #222;
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:#444;
 }
 
 /* GALLERY */
 .gallery img{
 width:100%;
-border-radius:10px;
+border-radius:12px;
+transition:0.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
 }
 
 /* CONTACT */
 .contact{
 text-align:center;
+color:#aaa;
 }
 
 /* FOOTER */
 footer{
 text-align:center;
 padding:30px;
-color:#94a3b8;
+color:#555;
 }
+
+/* ANIMATION */
+.fade{
+opacity:0;
+transform:translateY(30px);
+transition:1s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
 </style>
 </head>
 
 <body>
 
 <nav>
-<h1>Khalil Ayman</h1>
+<h1>Khalil</h1>
 <div>
 <a href="#about">About</a>
-<a href="#achievements">Achievements</a>
+<a href="#achievements">Work</a>
 <a href="#contact">Contact</a>
 </div>
 </nav>
 
 <div class="hero">
-<h2>Creative Storyteller & Content Creator</h2>
-<p>I turn ideas into stories, visuals, and experiences.</p>
+<h2>I create <span>stories</span>, visuals & emotion.</h2>
+<p>Content Creator • Writer • Actor</p>
 </div>
 
-<section id="about">
+<section id="about" class="fade">
 <h3>About</h3>
 <div class="grid">
-<div class="card">Award-winning poet & writer</div>
-<div class="card">Content creator for brands</div>
-<div class="card">Actor & creative thinker</div>
+<div class="card">Award-winning poet and storyteller.</div>
+<div class="card">Creative content creator for brands.</div>
+<div class="card">Actor with strong emotional delivery.</div>
 </div>
 </section>
 
-<section id="achievements">
-<h3>Achievements</h3>
+<section id="achievements" class="fade">
+<h3>Selected Work</h3>
 
 <div class="grid gallery">
 <img src="images/award1.jpg">
@@ -139,16 +181,32 @@ color:#94a3b8;
 
 </section>
 
-<section id="contact" class="contact">
+<section id="contact" class="contact fade">
 <h3>Contact</h3>
-<p>📍 Giza, Egypt</p>
-<p>📞 +201115002997</p>
-<p>✉ Khalil.aayousef@gmail.com</p>
+<p>Giza, Egypt</p>
+<p>+201115002997</p>
+<p>Khalil.aayousef@gmail.com</p>
 </section>
 
 <footer>
 © 2026 Khalil Ayman
 </footer>
+
+<script>
+
+/* Scroll animation */
+const elements=document.querySelectorAll('.fade');
+
+window.addEventListener('scroll',()=>{
+elements.forEach(el=>{
+const top=el.getBoundingClientRect().top;
+if(top<window.innerHeight-50){
+el.classList.add('show');
+}
+});
+});
+
+</script>
 
 </body>
 </html>
