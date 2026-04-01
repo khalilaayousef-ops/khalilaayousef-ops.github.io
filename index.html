@@ -1,3 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khalil Ayman | Creative Portfolio</title>
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:Arial; }
+body { background:#0f172a; color:white; line-height:1.6; }
+a { text-decoration:none; color:#38bdf8; }
+
+header { height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:20px; }
+header h1 { font-size:48px; margin-bottom:10px; }
+header p { font-size:20px; color:#cbd5f5; }
+
+.btn { margin-top:15px; padding:12px 25px; background:#38bdf8; border:none; border-radius:6px; color:white; display:inline-block; }
+
+nav { background:#020617; position:sticky; top:0; z-index:1000; }
+nav ul { display:flex; justify-content:center; list-style:none; }
+nav li { margin:0 20px; }
+nav a { color:white; display:block; padding:15px; }
+nav a:hover { color:#38bdf8; }
+
+section { max-width:1100px; margin:auto; padding:80px 20px; }
+h2 { text-align:center; margin-bottom:40px; font-size:32px; }
+
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; }
+
+.card { background:#1e293b; padding:20px; border-radius:10px; text-align:center; transition:.3s; }
+.card:hover { transform:translateY(-5px); }
+
+.card img { width:100%; border-radius:8px; cursor:pointer; }
+
+.skill { margin-bottom:15px; }
+.progress { background:#334155; height:8px; border-radius:5px; }
+.progress div { background:#38bdf8; height:8px; border-radius:5px; }
+
+footer { background:#020617; text-align:center; padding:20px; }
+
+#lightbox {
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:2000;
+}
+
+#lightbox img {
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+}
+
+/* Popup */
+#brandPopup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:3000;
+}
+#brandPopup .content{
+background:#1e293b;
+padding:25px;
+border-radius:10px;
+text-align:center;
+max-width:500px;
+width:90%;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Khalil Ayman Abdelaziz</h1>
+<p>Creative Content Creator | Freelancer</p>
+<p>Haram St., Giza – Egypt</p>
+
+<a class="btn" href="#projects">View My Work</a>
+<a class="btn" href="Khalil_Ayman_CV.pdf" download>Download CV</a>
+</header>
+
+<nav>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#achievements">Achievements</a></li>
+<li><a href="#projects">Works</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section id="projects">
+<h2>Creative Works</h2>
+
+<div class="grid">
+<div class="card" onclick="openBrand('hirisk')">Hi Risk</div>
+<div class="card" onclick="openBrand('ceramed')">Ceramed</div>
+<div class="card" onclick="openBrand('hameed')">Hameed</div>
+<div class="card" onclick="openBrand('mokbel')">Mokbel Design</div>
+<div class="card" onclick="openBrand('calzolaio')">Calzolaio</div>
+<div class="card" onclick="openBrand('almoudawah')">Almoudawah</div>
+<div class="card" onclick="openBrand('flebiny')">Flebiny Salon</div>
+<div class="card" onclick="openBrand('ads')">Advertisements</div>
+</div>
+
+</section>
+
+<!-- Popup -->
+<div id="brandPopup" onclick="closePopup()">
+<div class="content" onclick="event.stopPropagation()">
+<h2 id="brandTitle"></h2>
+<p id="brandDesc"></p>
+<div id="brandLinks"></div>
+</div>
+</div>
+
 <script>
 function openBrand(brand){
 
@@ -7,8 +138,8 @@ hirisk:{
 title:"Hi Risk",
 desc:"Restaurant & cafe in Tanta.",
 links:[
-{title:"Instagram",url:"https://www.instagram.com/hiriskcafe?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="},
-{title:"TikTok",url:"https://www.tiktok.com/@hi_risk1?is_from_webapp=1&sender_device=pc"},
+{title:"Instagram",url:"https://www.instagram.com/hiriskcafe"},
+{title:"TikTok",url:"https://www.tiktok.com/@hi_risk1"},
 {title:"Facebook",url:"https://www.facebook.com"}
 ]
 },
@@ -27,35 +158,35 @@ hameed:{
 title:"Hameed",
 desc:"Restaurant content.",
 links:[
-{title:"Instagram",url:"https://www.instagram.com/hameedegypt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="},
-{title:"TikTok",url:"https://www.tiktok.com/@hameedeg?is_from_webapp=1&sender_device=pc"},
+{title:"Instagram",url:"https://www.instagram.com/hameedegypt"},
+{title:"TikTok",url:"https://www.tiktok.com/@hameedeg"},
 {title:"Facebook",url:"https://www.facebook.com"}
 ]
 },
 
 mokbel:{
 title:"Mokbel Design & Architecture",
-desc:"Architecture content creation.",
+desc:"Architecture content.",
 links:[
-{title:"Instagram",url:"https://www.instagram.com/mokbeldesignco?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="},
-{title:"TikTok",url:"https://www.tiktok.com/@mokbel.designco?is_from_webapp=1&sender_device=pc"},
+{title:"Instagram",url:"https://www.instagram.com/mokbeldesignco"},
+{title:"TikTok",url:"https://www.tiktok.com/@mokbel.designco"},
 {title:"Facebook",url:"https://www.facebook.com"}
 ]
 },
 
 calzolaio:{
 title:"Calzolaio",
-desc:"Italian-inspired brand storytelling.",
+desc:"Italian storytelling.",
 links:[
-{title:"Instagram",url:"https://www.instagram.com/calzolaioegypt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="},
-{title:"TikTok",url:"https://www.tiktok.com/@calzolaioegypt?is_from_webapp=1&sender_device=pc"},
+{title:"Instagram",url:"https://www.instagram.com/calzolaioegypt"},
+{title:"TikTok",url:"https://www.tiktok.com/@calzolaioegypt"},
 {title:"Facebook",url:"https://www.facebook.com"}
 ]
 },
 
 almoudawah:{
 title:"Almoudawah Center",
-desc:"Physiotherapy & rehabilitation services.",
+desc:"Physiotherapy & rehab.",
 links:[
 {title:"Instagram",url:"https://www.instagram.com/almoudawah"},
 {title:"TikTok",url:"https://www.tiktok.com/@almoudawah11"},
@@ -105,3 +236,6 @@ function closePopup(){
 document.getElementById("brandPopup").style.display="none";
 }
 </script>
+
+</body>
+</html>
