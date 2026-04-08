@@ -200,34 +200,106 @@ text-align:center;
 
 <div id="rest" class="tab-content active">
 <div class="grid">
-<div class="card" onclick="openBrand('hirisk')">Hi Risk</div>
-<div class="card" onclick="openBrand('hameed')">Hameed</div>
-</div>
-</div>
+function openBrand(brand){
 
-<div id="cosmetics" class="tab-content">
-<div class="grid"><div class="card" onclick="openBrand('ceramed')">Ceramed</div></div>
-</div>
+const data={
 
-<div id="design" class="tab-content">
-<div class="grid"><div class="card" onclick="openBrand('mokbel')">Mokbel Design & Architecture</div></div>
-</div>
+hirisk:{
+title:"Hi Risk",
+desc:"High-impact content enhancing brand identity and audience engagement.",
+links:[
+{title:"Instagram",url:"https://www.instagram.com/hiriskcafe"},
+{title:"TikTok",url:"https://www.tiktok.com/@hi_risk1"},
+{title:"Facebook",url:"https://www.facebook.com"}
+]
+},
 
-<div id="shoes" class="tab-content">
-<div class="grid"><div class="card" onclick="openBrand('calzolaio')">Calzolaio</div></div>
-</div>
+ceramed:{
+title:"Ceramed",
+desc:"Visual-driven beauty content focused on product appeal and brand presence.",
+links:[
+{title:"Instagram",url:"https://www.instagram.com/ceramed.pharma"},
+{title:"TikTok",url:"https://www.tiktok.com/@ceramed.pharma"},
+{title:"Facebook",url:"https://www.facebook.com"}
+]
+},
 
-<div id="medical" class="tab-content">
-<div class="grid"><div class="card" onclick="openBrand('almoudawah')">Almoudawah</div></div>
-</div>
+hameed:{
+title:"Hameed",
+desc:"Engaging food content capturing taste, atmosphere, and customer experience.",
+links:[
+{title:"Instagram",url:"https://www.instagram.com/hameedegypt"},
+{title:"TikTok",url:"https://www.tiktok.com/@hameedeg"},
+{title:"Facebook",url:"https://www.facebook.com"}
+]
+},
 
-<div id="barber" class="tab-content">
-<div class="grid"><div class="card" onclick="openBrand('flebiny')">Flebiny Salon</div></div>
-</div>
+mokbel:{
+title:"Mokbel Design & Architecture",
+desc:"Creative content showcasing architectural quality, elegance, and precision.",
+links:[
+{title:"Instagram",url:"https://www.instagram.com/mokbeldesignco"},
+{title:"TikTok",url:"https://www.tiktok.com/@mokbel.designco"},
+{title:"Facebook",url:"https://www.facebook.com"}
+]
+},
 
-<div id="ads" class="tab-content">
-<div class="grid"><div class="card">Coming Soon</div></div>
-</div>
+calzolaio:{
+title:"Calzolaio",
+desc:"Unique product storytelling inspired by Italian culture and brand identity.",
+links:[
+{title:"Instagram",url:"https://www.instagram.com/calzolaioegypt"},
+{title:"TikTok",url:"https://www.tiktok.com/@calzolaioegypt"},
+{title:"Facebook",url:"https://www.facebook.com"}
+]
+},
+
+almoudawah:{
+title:"Almoudawah Center",
+desc:"Professional medical content highlighting trust, expertise, and service value.",
+links:[
+{title:"Instagram",url:"https://www.instagram.com/almoudawah"}
+]
+},
+
+flebiny:{
+title:"Flebiny Salon",
+desc:"Premium content reflecting style, precision, and a high-end brand image.",
+links:[
+{title:"Work",url:"https://drive.google.com/drive/folders/1cU50kiA03-uOSvTkqK-fW02kgTCDMX7G"},
+{title:"Facebook",url:"https://www.facebook.com/share/1EzSyaTWBh/"},
+{title:"Instagram",url:"https://www.instagram.com/flebiny_salon?igsh=bDcxeXkybWJtazdk"},
+{title:"TikTok",url:"https://www.tiktok.com/@flebinysalon?_r=1&_t=ZS-959HtXzSg9g"}
+]
+},
+
+ads:{
+title:"Advertisements",
+desc:"Creative campaigns and storytelling content across multiple formats.",
+links:[
+{title:"Christmas 🎄",url:"https://vt.tiktok.com/ZSHY1pSfk/"},
+{title:"Novels",url:"https://drive.google.com/file/d/1X-ASf6_zbiyZjJ6jNUF1tGXlCmvJr87l/view?usp=drivesdk"},
+{title:"Halan",url:"https://drive.google.com/file/d/16WOXSdBURBaNYtBwVX0eapmpQwrLS7IQ/view?usp=drivesdk"},
+{title:"Vlog",url:"https://drive.google.com/file/d/1aeLtUCkgWUGnuYmayYFvfFtHO6Fvd8n-/view?usp=drivesdk"}
+]
+}
+
+};
+
+let item=data[brand];
+
+document.getElementById("brandTitle").innerText=item.title;
+document.getElementById("brandDesc").innerText=item.desc;
+
+let linksHTML="";
+item.links.forEach(link=>{
+linksHTML+=`<a href="${link.url}" target="_blank" class="btn" style="display:block;margin:5px 0;">${link.title}</a>`;
+});
+
+document.getElementById("brandLinks").innerHTML=linksHTML;
+
+document.getElementById("brandPopup").style.display="flex";
+}
 
 </section>
 
