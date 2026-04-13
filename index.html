@@ -6,24 +6,15 @@
 <title>Khalil Ayman | Portfolio</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
-}
 
+/* ===== GLOBAL ===== */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
 body{
-background:#050505;
+background:linear-gradient(135deg,#020617,#0f172a);
 color:#fff;
 }
 
-/* Glow */
-.glow{
-box-shadow:0 0 20px rgba(255,255,255,0.05);
-}
-
-/* Header */
+/* ===== HEADER ===== */
 header{
 height:100vh;
 display:flex;
@@ -31,96 +22,74 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:linear-gradient(180deg,#050505,#0a0a0a);
 }
-
-header h1{
-font-size:50px;
-letter-spacing:1px;
-}
-
-header p{
-color:#aaa;
-margin-top:10px;
-}
-
+header h1{font-size:50px;letter-spacing:1px;}
+header p{color:#aaa;margin-top:10px;}
 .btn{
 margin-top:20px;
 padding:12px 25px;
-background:#111;
-border:1px solid #333;
-color:#fff;
-border-radius:8px;
-cursor:pointer;
-transition:.3s;
-}
-
-.btn:hover{
 background:#fff;
 color:#000;
+border-radius:8px;
+display:inline-block;
+font-weight:bold;
 }
 
-/* Sections */
-section{
-max-width:1100px;
-margin:auto;
-padding:80px 20px;
+/* ===== NAV ===== */
+nav{
+position:sticky;
+top:0;
+background:#000;
+padding:10px;
+z-index:999;
 }
+nav ul{display:flex;justify-content:center;list-style:none;}
+nav li{margin:0 15px;}
+nav a{color:#fff;}
+nav a:hover{color:#ccc;}
 
-h2{
-text-align:center;
-margin-bottom:40px;
-font-size:30px;
-}
+/* ===== SECTIONS ===== */
+section{padding:80px 20px;max-width:1100px;margin:auto;}
+h2{text-align:center;margin-bottom:40px;}
 
-/* Grid */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 
-/* Cards */
 .card{
-background:#0a0a0a;
-padding:25px;
+background:#111;
+padding:20px;
 border-radius:12px;
-border:1px solid #111;
-transition:.4s;
+text-align:center;
+transition:.3s;
+border:1px solid #222;
+}
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 0 20px rgba(255,255,255,0.1);
 cursor:pointer;
 }
 
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 25px rgba(255,255,255,0.08);
-}
-
-/* Tabs */
-.tabs{
-text-align:center;
-margin-bottom:30px;
-}
-
-.tab-btn{
+/* ===== TABS ===== */
+.tab-buttons{text-align:center;margin-bottom:20px;}
+.tab-buttons button{
 margin:5px;
 padding:10px 15px;
 background:#111;
-border:1px solid #333;
 color:#fff;
+border:1px solid #333;
 border-radius:6px;
 cursor:pointer;
 }
-
-.tab-btn.active{
-background:#fff;
-color:#000;
-}
+.tab-buttons button:hover{background:#fff;color:#000;}
 
 .tab-content{display:none;}
 .tab-content.active{display:block;}
 
-/* Popup */
-.popup{
+/* ===== POPUP ===== */
+#popup{
 position:fixed;
 top:0;
 left:0;
@@ -130,21 +99,27 @@ background:rgba(0,0,0,0.9);
 display:none;
 justify-content:center;
 align-items:center;
-z-index:3000;
+z-index:1000;
 }
-
 .popup-box{
-background:#0a0a0a;
-padding:30px;
-border-radius:12px;
-width:90%;
-max-width:500px;
+background:#111;
+padding:25px;
+border-radius:10px;
 text-align:center;
-border:1px solid #222;
+max-width:400px;
+width:90%;
+}
+.popup-box a{
+display:block;
+margin:10px;
+padding:10px;
+background:#fff;
+color:#000;
+border-radius:6px;
 }
 
-/* WhatsApp */
-#whatsapp{
+/* ===== WHATSAPP BUTTON ===== */
+.whatsapp{
 position:fixed;
 bottom:20px;
 right:20px;
@@ -153,25 +128,18 @@ width:60px;
 height:60px;
 border-radius:50%;
 display:flex;
-align-items:center;
 justify-content:center;
-font-size:24px;
-color:#fff;
+align-items:center;
+font-size:28px;
+color:white;
 cursor:pointer;
-box-shadow:0 0 20px rgba(0,0,0,0.4);
-transition:.3s;
+box-shadow:0 0 15px rgba(0,0,0,0.5);
+z-index:999;
 }
 
-#whatsapp:hover{
-transform:scale(1.1);
-}
+/* ===== FOOTER ===== */
+footer{text-align:center;padding:20px;background:#000;color:#aaa;}
 
-/* Footer */
-footer{
-text-align:center;
-padding:20px;
-color:#777;
-}
 </style>
 </head>
 
@@ -180,18 +148,26 @@ color:#777;
 <header>
 <h1>Khalil Ayman</h1>
 <p>Creative Content Creator</p>
-<a href="#projects" class="btn">Explore My Work</a>
+<a href="#projects" class="btn">View Work</a>
 </header>
 
+<nav>
+<ul>
+<li><a href="#projects">Works</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<!-- ===== PROJECTS ===== -->
 <section id="projects">
 <h2>Creative Works</h2>
 
-<div class="tabs">
-<button class="tab-btn active" onclick="openTab(event,'rest')">Restaurants</button>
-<button class="tab-btn" onclick="openTab(event,'cosmetics')">Cosmetics</button>
-<button class="tab-btn" onclick="openTab(event,'design')">Design</button>
-<button class="tab-btn" onclick="openTab(event,'barber')">Barber</button>
-<button class="tab-btn" onclick="openTab(event,'ads')">Ads</button>
+<div class="tab-buttons">
+<button onclick="openTab('rest')">Restaurants</button>
+<button onclick="openTab('cosmetics')">Cosmetics</button>
+<button onclick="openTab('design')">Design</button>
+<button onclick="openTab('barber')">Barber</button>
+<button onclick="openTab('ads')">Ads</button>
 </div>
 
 <div id="rest" class="tab-content active">
@@ -209,57 +185,70 @@ color:#777;
 
 <div id="design" class="tab-content">
 <div class="grid">
-<div class="card" onclick="openBrand('mokbel')">Mokbel Design</div>
+<div class="card" onclick="openBrand('mokbel')">Mokbel</div>
 </div>
 </div>
 
 <div id="barber" class="tab-content">
 <div class="grid">
-<div class="card" onclick="openBrand('flebiny')">Flebiny Salon</div>
+<div class="card" onclick="openBrand('flebiny')">Flebiny</div>
 </div>
 </div>
 
 <div id="ads" class="tab-content">
 <div class="grid">
-<div class="card" onclick="openBrand('ads')">Advertisements</div>
+<div class="card" onclick="openBrand('ads')">Ads</div>
 </div>
 </div>
 
 </section>
 
-<!-- Popup -->
-<div id="popup" class="popup" onclick="closePopup()">
-<div class="popup-box" onclick="event.stopPropagation()">
-<h2 id="title"></h2>
-<p id="desc" style="color:#aaa;margin:10px 0;"></p>
-<div id="links"></div>
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+<h2>Contact</h2>
+<div class="card">
+📞 01115002997 <br>
+📞 01273117296 <br>
+✉ Khalil.aayousef@gmail.com
 </div>
-</div>
-
-<!-- WhatsApp -->
-<a id="whatsapp" href="https://wa.me/201115002997" target="_blank">💬</a>
+</section>
 
 <footer>
 © 2026 Khalil Ayman
 </footer>
 
+<!-- ===== POPUP ===== -->
+<div id="popup" onclick="closePopup()">
+<div class="popup-box" onclick="event.stopPropagation()">
+<h2 id="title"></h2>
+<p id="desc"></p>
+<div id="links"></div>
+</div>
+</div>
+
+<!-- ===== WHATSAPP BUTTON ===== -->
+<div class="whatsapp" onclick="openWhats()">
+💬
+</div>
+
 <script>
-function openTab(evt,id){
-document.querySelectorAll(".tab-content").forEach(t=>t.classList.remove("active"));
-document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("active"));
-document.getElementById(id).classList.add("active");
-evt.currentTarget.classList.add("active");
+
+/* Tabs */
+function openTab(id){
+document.querySelectorAll('.tab-content').forEach(el=>el.classList.remove('active'));
+document.getElementById(id).classList.add('active');
 }
 
+/* Brands */
 function openBrand(b){
 
 const data={
-hirisk:{title:"Hi Risk",desc:"Restaurant & cafe.",links:[["Instagram","https://www.instagram.com/hiriskcafe"]]},
-hameed:{title:"Hameed",desc:"Restaurant.",links:[["Instagram","https://www.instagram.com/hameedegypt"]]},
-ceramed:{title:"Ceramed",desc:"Cosmetics shop.",links:[["Instagram","https://www.instagram.com/ceramed.pharma"]]},
-mokbel:{title:"Mokbel",desc:"Architecture.",links:[["Instagram","https://www.instagram.com/mokbeldesignco"]]},
-flebiny:{title:"Flebiny",desc:"Barber.",links:[["Work","https://drive.google.com"]]},
-ads:{title:"Ads",desc:"Campaigns.",links:[["Vlog","https://drive.google.com"]]}
+hirisk:{title:"Hi Risk",desc:"Restaurant content",links:[["Instagram","https://www.instagram.com/hiriskcafe"]]},
+hameed:{title:"Hameed",desc:"Food content",links:[["Instagram","https://www.instagram.com/hameedegypt"]]},
+ceramed:{title:"Ceramed",desc:"Cosmetics branding",links:[["Instagram","https://www.instagram.com/ceramed.pharma"]]},
+mokbel:{title:"Mokbel",desc:"Architecture content",links:[["Instagram","https://www.instagram.com/mokbeldesignco"]]},
+flebiny:{title:"Flebiny",desc:"Barber brand",links:[["Work","https://drive.google.com"]]},
+ads:{title:"Ads",desc:"Creative campaigns",links:[["View","https://vt.tiktok.com"]]}
 };
 
 let item=data[b];
@@ -269,7 +258,7 @@ document.getElementById("desc").innerText=item.desc;
 
 let html="";
 item.links.forEach(l=>{
-html+=`<a href="${l[1]}" target="_blank" class="btn">${l[0]}</a>`;
+html+=`<a href="${l[1]}" target="_blank">${l[0]}</a>`;
 });
 
 document.getElementById("links").innerHTML=html;
@@ -279,6 +268,12 @@ document.getElementById("popup").style.display="flex";
 function closePopup(){
 document.getElementById("popup").style.display="none";
 }
+
+/* WhatsApp */
+function openWhats(){
+window.open("https://wa.me/201115002997","_blank");
+}
+
 </script>
 
 </body>
