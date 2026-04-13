@@ -6,26 +6,12 @@
 <title>Khalil Ayman | Portfolio</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,Arial;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
+
 body{
 background:linear-gradient(135deg,#020617,#0f172a);
 color:white;
-}
-
-/* Background Animation */
-body::before{
-content:"";
-position:fixed;
-width:200%;
-height:200%;
-background:radial-gradient(circle,#38bdf830 1px,transparent 1px);
-background-size:40px;
-animation:move 20s linear infinite;
-z-index:-1;
-}
-@keyframes move{
-0%{transform:translate(0,0);}
-100%{transform:translate(-200px,-200px);}
+line-height:1.6;
 }
 
 /* Header */
@@ -37,29 +23,53 @@ justify-content:center;
 align-items:center;
 text-align:center;
 }
+
 header h1{
-font-size:55px;
+font-size:48px;
 background:linear-gradient(90deg,#38bdf8,#22c55e);
 -webkit-background-clip:text;
 color:transparent;
 }
-header p{color:#94a3b8;margin-top:10px;}
+
+header p{color:#cbd5f5;margin:5px;}
 
 .btn{
-padding:12px 25px;
 margin-top:15px;
-border-radius:30px;
+padding:12px 25px;
+background:#38bdf8;
 border:none;
-background:linear-gradient(90deg,#38bdf8,#22c55e);
+border-radius:6px;
 color:white;
 cursor:pointer;
 transition:.3s;
-display:inline-block;
 }
-.btn:hover{transform:scale(1.05);}
+.btn:hover{background:#0ea5e9;}
+
+/* Navbar */
+nav{
+background:#020617;
+position:sticky;
+top:0;
+}
+nav ul{
+display:flex;
+justify-content:center;
+list-style:none;
+}
+nav li{margin:0 15px;}
+nav a{
+color:white;
+padding:15px;
+display:block;
+}
+nav a:hover{color:#38bdf8;}
 
 /* Sections */
-section{max-width:1100px;margin:auto;padding:80px 20px;}
+section{
+max-width:1100px;
+margin:auto;
+padding:70px 20px;
+}
 h2{text-align:center;margin-bottom:30px;}
 
 .grid{
@@ -68,29 +78,28 @@ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 
-/* Cards */
 .card{
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(10px);
+background:#1e293b;
 padding:20px;
-border-radius:15px;
-border:1px solid rgba(255,255,255,0.1);
-cursor:pointer;
+border-radius:10px;
+text-align:center;
 transition:.3s;
+cursor:pointer;
 }
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 0 20px #38bdf8;
-}
+.card:hover{transform:translateY(-5px);}
 
 /* Skills */
-.skill{margin-bottom:15px;}
-.progress{background:#334155;height:8px;border-radius:5px;}
-.progress div{background:#38bdf8;height:8px;border-radius:5px;}
-
-/* Tabs */
-.tab-content{display:none;}
-.tab-content.active{display:block;}
+.progress{
+background:#334155;
+height:8px;
+border-radius:5px;
+margin-top:5px;
+}
+.progress div{
+background:#38bdf8;
+height:8px;
+border-radius:5px;
+}
 
 /* Popup */
 #popup{
@@ -103,13 +112,14 @@ background:rgba(0,0,0,0.9);
 display:none;
 justify-content:center;
 align-items:center;
-z-index:999;
+z-index:2000;
 }
 .popup-box{
-background:#0f172a;
+background:#1e293b;
 padding:25px;
-border-radius:15px;
+border-radius:10px;
 text-align:center;
+max-width:400px;
 }
 
 /* WhatsApp */
@@ -118,38 +128,64 @@ position:fixed;
 bottom:20px;
 right:20px;
 background:#25D366;
-width:60px;
-height:60px;
-border-radius:50%;
 display:flex;
 align-items:center;
-justify-content:center;
-box-shadow:0 0 20px #25D366;
-z-index:1000;
+gap:10px;
+padding:12px 18px;
+border-radius:50px;
+color:white;
+text-decoration:none;
+box-shadow:0 8px 25px rgba(0,0,0,0.3);
 transition:.3s;
+animation:float 2s infinite;
 }
+.whatsapp img{width:24px;}
 .whatsapp:hover{transform:scale(1.1);}
-.whatsapp img{width:30px;}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-5px);}
+100%{transform:translateY(0);}
+}
 
 footer{
 background:#020617;
 text-align:center;
-padding:20px;
-margin-top:40px;
+padding:15px;
 }
 </style>
 </head>
 
 <body>
 
+<!-- WhatsApp -->
+<a href="https://wa.me/201115002997" target="_blank" class="whatsapp">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+<span>Chat with me</span>
+</a>
+
+<!-- Header -->
 <header>
 <h1>Khalil Ayman Abdelaziz</h1>
 <p>Creative Content Creator | Freelancer</p>
 <p>Haram St., Giza – Egypt</p>
 <a class="btn" href="#projects">View My Work</a>
-<a class="btn" href="Khalil_Ayman_CV.pdf" download>Download CV</a>
+<a class="btn" href="Khalil_Ayman_CV.pdf">Download CV</a>
 </header>
 
+<!-- Navbar -->
+<nav>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#achievements">Achievements</a></li>
+<li><a href="#projects">Works</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<!-- About -->
 <section id="about">
 <h2>Career Highlights</h2>
 <div class="grid">
@@ -160,68 +196,56 @@ margin-top:40px;
 </div>
 </section>
 
+<!-- Education -->
+<section id="education">
+<h2>Education</h2>
+<div class="grid">
+<div class="card">Commerce – Tanta University</div>
+<div class="card">Theatre Arts – Helwan University</div>
+<div class="card">Arab School of Cinema</div>
+</div>
+</section>
+
+<!-- Skills -->
 <section id="skills">
 <h2>Skills</h2>
 <div class="grid">
 
 <div class="card">
-<h3>Computer Programs</h3>
-<div class="skill">Word<div class="progress"><div style="width:80%"></div></div></div>
-<div class="skill">Excel<div class="progress"><div style="width:80%"></div></div></div>
-<div class="skill">PowerPoint<div class="progress"><div style="width:80%"></div></div></div>
-<div class="skill">SQL<div class="progress"><div style="width:85%"></div></div></div>
+<h3>Computer</h3>
+<div>Word<div class="progress"><div style="width:80%"></div></div></div>
+<div>Excel<div class="progress"><div style="width:80%"></div></div></div>
+<div>SQL<div class="progress"><div style="width:85%"></div></div></div>
 </div>
 
 <div class="card">
-<h3>Creative Tools</h3>
-<div class="skill">CapCut<div class="progress"><div style="width:95%"></div></div></div>
-<div class="skill">Canva<div class="progress"><div style="width:90%"></div></div></div>
-<div class="skill">AI Tools<div class="progress"><div style="width:90%"></div></div></div>
+<h3>Creative</h3>
+<div>CapCut<div class="progress"><div style="width:95%"></div></div></div>
+<div>Canva<div class="progress"><div style="width:90%"></div></div></div>
+<div>AI Tools<div class="progress"><div style="width:90%"></div></div></div>
 </div>
 
 </div>
 </section>
 
+<!-- Achievements -->
+<section id="achievements">
+<h2>Achievements</h2>
+<div class="grid">
+<div class="card">Award 1</div>
+<div class="card">Award 2</div>
+<div class="card">Award 3</div>
+</div>
+</section>
+
+<!-- Projects -->
 <section id="projects">
 <h2>Creative Works</h2>
 
-<div style="text-align:center;margin-bottom:20px;">
-<button class="btn" onclick="openTab('rest')">Restaurants</button>
-<button class="btn" onclick="openTab('cosmetics')">Cosmetics</button>
-<button class="btn" onclick="openTab('design')">Design</button>
-<button class="btn" onclick="openTab('barber')">Barber</button>
-<button class="btn" onclick="openTab('ads')">Ads</button>
-</div>
-
-<div id="rest" class="tab-content active">
 <div class="grid">
 <div class="card" onclick="openBrand('hirisk')">Hi Risk</div>
-<div class="card" onclick="openBrand('hameed')">Hameed</div>
-</div>
-</div>
-
-<div id="cosmetics" class="tab-content">
-<div class="grid">
 <div class="card" onclick="openBrand('ceramed')">Ceramed</div>
-</div>
-</div>
-
-<div id="design" class="tab-content">
-<div class="grid">
-<div class="card" onclick="openBrand('mokbel')">Mokbel</div>
-</div>
-</div>
-
-<div id="barber" class="tab-content">
-<div class="grid">
-<div class="card" onclick="openBrand('flebiny')">Flebiny</div>
-</div>
-</div>
-
-<div id="ads" class="tab-content">
-<div class="grid">
 <div class="card" onclick="openBrand('ads')">Ads</div>
-</div>
 </div>
 
 </section>
@@ -235,19 +259,13 @@ margin-top:40px;
 </div>
 </div>
 
-<!-- WhatsApp -->
-<a href="https://wa.me/201115002997?text=Hello%20Khalil%20I%20want%20to%20work%20with%20you"
-target="_blank" class="whatsapp">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-</a>
-
+<!-- Contact -->
 <section id="contact">
 <h2>Contact</h2>
 <div class="card">
-📍 Haram, Giza, Egypt<br>
-📞 +201115002997<br>
-📞 +201002276455<br>
-✉ Khalil.aayousef@gmail.com
+📍 Giza, Egypt<br>
+📞 01115002997<br>
+📧 Khalil.aayousef@gmail.com
 </div>
 </section>
 
@@ -256,31 +274,32 @@ target="_blank" class="whatsapp">
 </footer>
 
 <script>
-
-function openTab(id){
-document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
-document.getElementById(id).classList.add('active');
-}
-
 function openBrand(b){
-
 const data={
-hirisk:{title:"Hi Risk",desc:"Restaurant content",links:[["Instagram","https://www.instagram.com/hiriskcafe"]]},
-hameed:{title:"Hameed",desc:"Restaurant",links:[["Instagram","https://www.instagram.com/hameedegypt"]]},
-ceramed:{title:"Ceramed",desc:"Cosmetics",links:[["Instagram","https://www.instagram.com/ceramed.pharma"]]},
-mokbel:{title:"Mokbel",desc:"Architecture",links:[["Instagram","https://www.instagram.com/mokbeldesignco"]]},
-flebiny:{title:"Flebiny",desc:"Barber",links:[["Work","https://drive.google.com"]]},
-ads:{title:"Ads",desc:"Campaigns",links:[["TikTok","https://vt.tiktok.com"]]}
+hirisk:{
+title:"Hi Risk",
+desc:"Restaurant content",
+links:[["Instagram","#"]]
+},
+ceramed:{
+title:"Ceramed",
+desc:"Cosmetics brand",
+links:[["Instagram","#"]]
+},
+ads:{
+title:"Ads",
+desc:"Marketing campaigns",
+links:[["View","#"]]
+}
 };
 
 let item=data[b];
-
 document.getElementById("title").innerText=item.title;
 document.getElementById("desc").innerText=item.desc;
 
 let html="";
 item.links.forEach(l=>{
-html+=`<a class="btn" href="${l[1]}" target="_blank">${l[0]}</a><br>`;
+html+=`<a href="${l[1]}" target="_blank" class="btn">${l[0]}</a><br>`;
 });
 
 document.getElementById("links").innerHTML=html;
@@ -290,7 +309,6 @@ document.getElementById("popup").style.display="flex";
 function closePopup(){
 document.getElementById("popup").style.display="none";
 }
-
 </script>
 
 </body>
