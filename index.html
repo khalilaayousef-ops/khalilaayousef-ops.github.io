@@ -14,19 +14,18 @@ color:white;
 overflow-x:hidden;
 }
 
-/* Animated background */
+/* Glow Background */
 body::before{
 content:"";
 position:fixed;
 width:200%;
 height:200%;
-background:radial-gradient(circle,#38bdf830 1px,transparent 1px);
+background:radial-gradient(circle,#38bdf820 1px,transparent 1px);
 background-size:40px 40px;
-animation:moveBg 20s linear infinite;
+animation:move 25s linear infinite;
 z-index:-1;
 }
-
-@keyframes moveBg{
+@keyframes move{
 0%{transform:translate(0,0);}
 100%{transform:translate(-200px,-200px);}
 }
@@ -40,19 +39,18 @@ justify-content:center;
 align-items:center;
 text-align:center;
 }
-
 header h1{
-font-size:52px;
+font-size:50px;
 background:linear-gradient(90deg,#38bdf8,#22c55e);
 -webkit-background-clip:text;
 color:transparent;
 }
-
 header p{color:#94a3b8;margin-top:10px;}
 
+/* Buttons */
 .btn{
 padding:12px 25px;
-margin-top:15px;
+margin:10px;
 border-radius:30px;
 border:none;
 background:linear-gradient(90deg,#38bdf8,#22c55e);
@@ -62,20 +60,21 @@ transition:.3s;
 }
 .btn:hover{transform:scale(1.05);}
 
-/* Glass Card */
-.card{
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(10px);
-border-radius:15px;
-padding:20px;
-border:1px solid rgba(255,255,255,0.1);
-transition:.3s;
-cursor:pointer;
+/* Navbar */
+nav{
+background:#020617;
+position:sticky;
+top:0;
+z-index:1000;
 }
-.card:hover{
-transform:translateY(-8px) scale(1.02);
-box-shadow:0 0 20px #38bdf8;
+nav ul{
+display:flex;
+justify-content:center;
+list-style:none;
 }
+nav li{margin:0 20px;}
+nav a{color:white;padding:15px;display:block;}
+nav a:hover{color:#38bdf8;}
 
 /* Layout */
 section{max-width:1100px;margin:auto;padding:80px 20px;}
@@ -86,6 +85,25 @@ display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
+
+/* Cards */
+.card{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+padding:20px;
+border-radius:15px;
+border:1px solid rgba(255,255,255,0.1);
+transition:.3s;
+cursor:pointer;
+}
+.card:hover{
+transform:translateY(-8px) scale(1.02);
+box-shadow:0 0 20px #38bdf8;
+}
+
+/* Skills */
+.progress{background:#334155;height:8px;border-radius:5px;}
+.progress div{background:#38bdf8;height:8px;border-radius:5px;}
 
 /* Tabs */
 .tab-content{display:none;}
@@ -102,9 +120,8 @@ background:rgba(0,0,0,0.8);
 display:none;
 justify-content:center;
 align-items:center;
-z-index:999;
+z-index:2000;
 }
-
 .popup-box{
 background:#0f172a;
 padding:25px;
@@ -112,12 +129,6 @@ border-radius:15px;
 width:90%;
 max-width:500px;
 text-align:center;
-animation:fadeIn .3s;
-}
-
-@keyframes fadeIn{
-from{opacity:0;transform:scale(.8);}
-to{opacity:1;transform:scale(1);}
 }
 
 /* WhatsApp */
@@ -126,21 +137,23 @@ position:fixed;
 bottom:20px;
 right:20px;
 background:#25D366;
-padding:15px;
+width:60px;
+height:60px;
+display:flex;
+align-items:center;
+justify-content:center;
 border-radius:50%;
-font-size:22px;
-cursor:pointer;
-box-shadow:0 0 15px #25D366;
+box-shadow:0 0 20px #25D366;
+transition:.3s;
+z-index:3000;
 }
+.whatsapp:hover{transform:scale(1.1);}
+.whatsapp img{width:30px;}
 
-#waBox{
-position:fixed;
-bottom:80px;
-right:20px;
-background:#0f172a;
-padding:15px;
-border-radius:10px;
-display:none;
+footer{
+background:#020617;
+text-align:center;
+padding:20px;
 }
 </style>
 </head>
@@ -149,18 +162,68 @@ display:none;
 
 <header>
 <h1>Khalil Ayman</h1>
-<p>Elite Creative Content Creator</p>
+<p>Creative Content Creator | Freelancer</p>
 <a class="btn" href="#projects">Explore Work</a>
+<a class="btn" href="Khalil_Ayman_CV.pdf" download>Download CV</a>
 </header>
+
+<nav>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Works</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section id="about">
+<h2>Career Highlights</h2>
+<div class="grid">
+<div class="card">Content Creator</div>
+<div class="card">Author</div>
+<div class="card">Poet</div>
+<div class="card">Actor</div>
+</div>
+</section>
+
+<section id="education">
+<h2>Education</h2>
+<div class="grid">
+<div class="card">Commerce - Tanta University</div>
+<div class="card">Theatre Arts - Helwan University</div>
+<div class="card">Arab Cinema School - Cairo</div>
+</div>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<div class="grid">
+
+<div class="card">
+<h3>Programs</h3>
+<div>Word<div class="progress"><div style="width:80%"></div></div></div>
+<div>Excel<div class="progress"><div style="width:80%"></div></div></div>
+<div>SQL<div class="progress"><div style="width:85%"></div></div></div>
+</div>
+
+<div class="card">
+<h3>Creative Tools</h3>
+<div>CapCut<div class="progress"><div style="width:95%"></div></div></div>
+<div>Canva<div class="progress"><div style="width:90%"></div></div></div>
+<div>AI Tools<div class="progress"><div style="width:90%"></div></div></div>
+</div>
+
+</div>
+</section>
 
 <section id="projects">
 <h2>Creative Works</h2>
 
-<div style="text-align:center;margin-bottom:20px;">
+<div style="text-align:center;">
 <button class="btn" onclick="openTab('rest')">Restaurants</button>
 <button class="btn" onclick="openTab('cosmetics')">Cosmetics</button>
 <button class="btn" onclick="openTab('design')">Design</button>
-<button class="btn" onclick="openTab('barber')">Barber</button>
 <button class="btn" onclick="openTab('ads')">Ads</button>
 </div>
 
@@ -183,12 +246,6 @@ display:none;
 </div>
 </div>
 
-<div id="barber" class="tab-content">
-<div class="grid">
-<div class="card" onclick="openBrand('flebiny')">Flebiny Salon</div>
-</div>
-</div>
-
 <div id="ads" class="tab-content">
 <div class="grid">
 <div class="card" onclick="openBrand('ads')">Ads</div>
@@ -207,53 +264,30 @@ display:none;
 </div>
 
 <!-- WhatsApp -->
-<div class="whatsapp" onclick="toggleWA()">💬</div>
-<div id="waBox">
-<a class="btn" href="https://wa.me/201115002997" target="_blank">Chat on WhatsApp</a>
-</div>
+<a href="https://wa.me/201115002997?text=Hello Khalil I saw your portfolio"
+target="_blank" class="whatsapp">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+</a>
 
 <script>
-
 function openTab(id){
-document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
-document.getElementById(id).classList.add('active');
+document.querySelectorAll(".tab-content").forEach(t=>t.classList.remove("active"));
+document.getElementById(id).classList.add("active");
 }
 
 function openBrand(b){
-
 const data={
-hirisk:{title:"Hi Risk",desc:"Restaurant content",links:[["Instagram","https://www.instagram.com/hiriskcafe"]]},
-hameed:{title:"Hameed",desc:"Food content",links:[["Instagram","https://www.instagram.com/hameedegypt"]]},
-ceramed:{title:"Ceramed",desc:"Cosmetics brand",links:[["Instagram","https://www.instagram.com/ceramed.pharma"]]},
-mokbel:{title:"Mokbel",desc:"Architecture",links:[["Instagram","https://www.instagram.com/mokbeldesignco"]]},
-flebiny:{title:"Flebiny",desc:"Barber",links:[["Work","https://drive.google.com"]]},
-ads:{title:"Ads",desc:"Campaigns",links:[["Christmas","https://vt.tiktok.com"]]}
+hirisk:{title:"Hi Risk",desc:"Restaurant",links:[["Instagram","https://instagram.com"]]},
+hameed:{title:"Hameed",desc:"Restaurant",links:[["Instagram","https://instagram.com"]]},
+ceramed:{title:"Ceramed",desc:"Cosmetics",links:[["Instagram","https://instagram.com"]]},
+mokbel:{title:"Mokbel",desc:"Design",links:[["Instagram","https://instagram.com"]]},
+ads:{title:"Ads",desc:"Campaigns",links:[["TikTok","https://tiktok.com"]]}
 };
 
 let item=data[b];
-
 document.getElementById("title").innerText=item.title;
 document.getElementById("desc").innerText=item.desc;
 
 let html="";
 item.links.forEach(l=>{
-html+=`<a class="btn" href="${l[1]}" target="_blank">${l[0]}</a><br>`;
-});
-
-document.getElementById("links").innerHTML=html;
-document.getElementById("popup").style.display="flex";
-}
-
-function closePopup(){
-document.getElementById("popup").style.display="none";
-}
-
-function toggleWA(){
-let b=document.getElementById("waBox");
-b.style.display=b.style.display==="block"?"none":"block";
-}
-
-</script>
-
-</body>
-</html>
+html+=`<a class="btn" href
