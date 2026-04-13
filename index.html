@@ -3,18 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Khalil Ayman | Portfolio</title>
+<title>Khalil Ayman | Elite Portfolio</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,Arial;}
 
 body{
-background:#020617;
-color:#fff;
+background:linear-gradient(135deg,#020617,#0f172a);
+color:white;
+overflow-x:hidden;
 }
 
-a{text-decoration:none;}
+/* Animated background */
+body::before{
+content:"";
+position:fixed;
+width:200%;
+height:200%;
+background:radial-gradient(circle,#38bdf830 1px,transparent 1px);
+background-size:40px 40px;
+animation:moveBg 20s linear infinite;
+z-index:-1;
+}
 
+@keyframes moveBg{
+0%{transform:translate(0,0);}
+100%{transform:translate(-200px,-200px);}
+}
+
+/* Header */
 header{
 height:100vh;
 display:flex;
@@ -24,30 +41,43 @@ align-items:center;
 text-align:center;
 }
 
-header h1{font-size:48px;}
-header p{color:#94a3b8;}
+header h1{
+font-size:52px;
+background:linear-gradient(90deg,#38bdf8,#22c55e);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+header p{color:#94a3b8;margin-top:10px;}
 
 .btn{
 padding:12px 25px;
-background:#38bdf8;
+margin-top:15px;
+border-radius:30px;
 border:none;
-border-radius:6px;
+background:linear-gradient(90deg,#38bdf8,#22c55e);
 color:white;
-display:inline-block;
-margin-top:10px;
+cursor:pointer;
+transition:.3s;
+}
+.btn:hover{transform:scale(1.05);}
+
+/* Glass Card */
+.card{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+border-radius:15px;
+padding:20px;
+border:1px solid rgba(255,255,255,0.1);
+transition:.3s;
 cursor:pointer;
 }
-
-nav{
-background:#020617;
-position:sticky;
-top:0;
-border-bottom:1px solid #1e293b;
+.card:hover{
+transform:translateY(-8px) scale(1.02);
+box-shadow:0 0 20px #38bdf8;
 }
-nav ul{display:flex;justify-content:center;list-style:none;}
-nav li{margin:0 20px;}
-nav a{color:white;padding:15px;display:block;}
 
+/* Layout */
 section{max-width:1100px;margin:auto;padding:80px 20px;}
 h2{text-align:center;margin-bottom:30px;}
 
@@ -55,20 +85,6 @@ h2{text-align:center;margin-bottom:30px;}
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
-}
-
-.card{
-background:#0f172a;
-padding:20px;
-border-radius:10px;
-text-align:center;
-cursor:pointer;
-border:1px solid #1e293b;
-transition:.3s;
-}
-.card:hover{
-transform:translateY(-5px);
-border-color:#38bdf8;
 }
 
 /* Tabs */
@@ -82,7 +98,7 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.9);
+background:rgba(0,0,0,0.8);
 display:none;
 justify-content:center;
 align-items:center;
@@ -92,10 +108,16 @@ z-index:999;
 .popup-box{
 background:#0f172a;
 padding:25px;
-border-radius:10px;
+border-radius:15px;
 width:90%;
 max-width:500px;
 text-align:center;
+animation:fadeIn .3s;
+}
+
+@keyframes fadeIn{
+from{opacity:0;transform:scale(.8);}
+to{opacity:1;transform:scale(1);}
 }
 
 /* WhatsApp */
@@ -106,11 +128,12 @@ right:20px;
 background:#25D366;
 padding:15px;
 border-radius:50%;
-cursor:pointer;
 font-size:22px;
+cursor:pointer;
+box-shadow:0 0 15px #25D366;
 }
 
-#whatsappBox{
+#waBox{
 position:fixed;
 bottom:80px;
 right:20px;
@@ -126,18 +149,10 @@ display:none;
 
 <header>
 <h1>Khalil Ayman</h1>
-<p>Creative Content Creator</p>
-<a class="btn" href="#projects">View Work</a>
+<p>Elite Creative Content Creator</p>
+<a class="btn" href="#projects">Explore Work</a>
 </header>
 
-<nav>
-<ul>
-<li><a href="#projects">Works</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
-
-<!-- Works -->
 <section id="projects">
 <h2>Creative Works</h2>
 
@@ -145,8 +160,6 @@ display:none;
 <button class="btn" onclick="openTab('rest')">Restaurants</button>
 <button class="btn" onclick="openTab('cosmetics')">Cosmetics</button>
 <button class="btn" onclick="openTab('design')">Design</button>
-<button class="btn" onclick="openTab('shoes')">Shoes</button>
-<button class="btn" onclick="openTab('medical')">Medical</button>
 <button class="btn" onclick="openTab('barber')">Barber</button>
 <button class="btn" onclick="openTab('ads')">Ads</button>
 </div>
@@ -170,18 +183,6 @@ display:none;
 </div>
 </div>
 
-<div id="shoes" class="tab-content">
-<div class="grid">
-<div class="card" onclick="openBrand('calzolaio')">Calzolaio</div>
-</div>
-</div>
-
-<div id="medical" class="tab-content">
-<div class="grid">
-<div class="card" onclick="openBrand('almoudawah')">Almoudawah</div>
-</div>
-</div>
-
 <div id="barber" class="tab-content">
 <div class="grid">
 <div class="card" onclick="openBrand('flebiny')">Flebiny Salon</div>
@@ -190,7 +191,7 @@ display:none;
 
 <div id="ads" class="tab-content">
 <div class="grid">
-<div class="card" onclick="openBrand('ads')">Advertisements</div>
+<div class="card" onclick="openBrand('ads')">Ads</div>
 </div>
 </div>
 
@@ -207,10 +208,8 @@ display:none;
 
 <!-- WhatsApp -->
 <div class="whatsapp" onclick="toggleWA()">💬</div>
-
-<div id="whatsappBox">
-<p>Chat on WhatsApp</p>
-<a class="btn" href="https://wa.me/201115002997" target="_blank">Open</a>
+<div id="waBox">
+<a class="btn" href="https://wa.me/201115002997" target="_blank">Chat on WhatsApp</a>
 </div>
 
 <script>
@@ -223,73 +222,12 @@ document.getElementById(id).classList.add('active');
 function openBrand(b){
 
 const data={
-
-hirisk:{
-title:"Hi Risk",
-desc:"Restaurant & cafe.",
-links:[
-["Instagram","https://www.instagram.com/hiriskcafe"],
-["TikTok","https://www.tiktok.com/@hi_risk1"]
-]
-},
-
-ceramed:{
-title:"Ceramed",
-desc:"Cosmetics brand.",
-links:[
-["Instagram","https://www.instagram.com/ceramed.pharma"]
-]
-},
-
-hameed:{
-title:"Hameed",
-desc:"Restaurant content.",
-links:[
-["Instagram","https://www.instagram.com/hameedegypt"]
-]
-},
-
-mokbel:{
-title:"Mokbel Design",
-desc:"Architecture content.",
-links:[
-["Instagram","https://www.instagram.com/mokbeldesignco"]
-]
-},
-
-calzolaio:{
-title:"Calzolaio",
-desc:"Italian branding.",
-links:[
-["Instagram","https://www.instagram.com/calzolaioegypt"]
-]
-},
-
-almoudawah:{
-title:"Almoudawah",
-desc:"Medical services.",
-links:[
-["Instagram","https://www.instagram.com/almoudawah"]
-]
-},
-
-flebiny:{
-title:"Flebiny Salon",
-desc:"Barber brand.",
-links:[
-["Work","https://drive.google.com/drive/folders/1cU50kiA03-uOSvTkqK-fW02kgTCDMX7G"],
-["Instagram","https://www.instagram.com/flebiny_salon"]
-]
-},
-
-ads:{
-title:"Ads",
-desc:"Campaigns.",
-links:[
-["Christmas","https://vt.tiktok.com/ZSHY1pSfk/"]
-]
-}
-
+hirisk:{title:"Hi Risk",desc:"Restaurant content",links:[["Instagram","https://www.instagram.com/hiriskcafe"]]},
+hameed:{title:"Hameed",desc:"Food content",links:[["Instagram","https://www.instagram.com/hameedegypt"]]},
+ceramed:{title:"Ceramed",desc:"Cosmetics brand",links:[["Instagram","https://www.instagram.com/ceramed.pharma"]]},
+mokbel:{title:"Mokbel",desc:"Architecture",links:[["Instagram","https://www.instagram.com/mokbeldesignco"]]},
+flebiny:{title:"Flebiny",desc:"Barber",links:[["Work","https://drive.google.com"]]},
+ads:{title:"Ads",desc:"Campaigns",links:[["Christmas","https://vt.tiktok.com"]]}
 };
 
 let item=data[b];
@@ -311,8 +249,8 @@ document.getElementById("popup").style.display="none";
 }
 
 function toggleWA(){
-let box=document.getElementById("whatsappBox");
-box.style.display = box.style.display==="block" ? "none" : "block";
+let b=document.getElementById("waBox");
+b.style.display=b.style.display==="block"?"none":"block";
 }
 
 </script>
