@@ -6,7 +6,6 @@
 <title>Khalil Ayman | Portfolio</title>
 
 <style>
-/* Background */
 body{
 margin:0;
 font-family:Arial;
@@ -16,7 +15,6 @@ background-image: radial-gradient(#1e3a8a 1px, transparent 1px);
 background-size:30px 30px;
 }
 
-/* Header */
 header{
 height:100vh;
 display:flex;
@@ -33,10 +31,7 @@ background: linear-gradient(to right,#38bdf8,#22c55e);
 color:transparent;
 }
 
-header p{
-color:#cbd5e1;
-margin:5px 0;
-}
+header p{color:#cbd5e1;}
 
 .btn{
 margin-top:15px;
@@ -46,11 +41,9 @@ border:none;
 border-radius:8px;
 color:white;
 cursor:pointer;
-transition:.3s;
 }
 .btn:hover{background:#0ea5e9}
 
-/* Navbar */
 nav{
 background:#020617;
 position:sticky;
@@ -60,8 +53,6 @@ nav ul{
 display:flex;
 justify-content:center;
 list-style:none;
-margin:0;
-padding:0;
 }
 nav li{margin:0 15px;}
 nav a{
@@ -71,7 +62,6 @@ display:block;
 }
 nav a:hover{color:#38bdf8}
 
-/* Sections */
 section{
 max-width:1100px;
 margin:auto;
@@ -79,7 +69,6 @@ padding:70px 20px;
 }
 h2{text-align:center;margin-bottom:30px}
 
-/* Grid */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -91,16 +80,14 @@ background:#1e293b;
 padding:20px;
 border-radius:12px;
 text-align:center;
-transition:.3s;
 cursor:pointer;
+transition:.3s;
 }
 .card:hover{transform:translateY(-5px)}
 
-/* Tabs */
 .tab-content{display:none;}
 .tab-content.active{display:block}
 
-/* Popup */
 #popup{
 position:fixed;
 top:0;
@@ -120,7 +107,7 @@ border-radius:10px;
 text-align:center;
 }
 
-/* WhatsApp Button */
+/* WhatsApp */
 .whatsapp{
 position:fixed;
 bottom:25px;
@@ -135,16 +122,10 @@ color:white;
 text-decoration:none;
 font-weight:bold;
 box-shadow:0 8px 25px rgba(0,0,0,0.3);
-animation:float 2s infinite ease-in-out;
-z-index:999;
+animation:float 2s infinite;
 }
-
 .whatsapp img{width:24px;}
-
-.whatsapp:hover{
-transform:scale(1.05);
-background:#1ebe5d;
-}
+.whatsapp:hover{transform:scale(1.05);}
 
 @keyframes float{
 0%{transform:translateY(0);}
@@ -162,8 +143,7 @@ padding:20px;
 
 <body>
 
-<!-- WhatsApp -->
-<a href="https://wa.me/201115002997?text=Hello%20Khalil" target="_blank" class="whatsapp">
+<a href="https://wa.me/201115002997?text=Hello%20Khalil,%20I%20saw%20your%20portfolio" target="_blank" class="whatsapp">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
 <span>Chat with me</span>
 </a>
@@ -174,12 +154,13 @@ padding:20px;
 <p>Haram St., Giza – Egypt</p>
 
 <a class="btn" href="#projects">View My Work</a>
-<a class="btn" href="#">Download CV</a>
+<a class="btn" href="Khalil_Ayman_CV.pdf" download>Download CV</a>
 </header>
 
 <nav>
 <ul>
 <li><a href="#about">About</a></li>
+<li><a href="#education">Education</a></li>
 <li><a href="#skills">Skills</a></li>
 <li><a href="#projects">Works</a></li>
 <li><a href="#contact">Contact</a></li>
@@ -191,18 +172,25 @@ padding:20px;
 <div class="grid">
 <div class="card">Content Creator</div>
 <div class="card">Author</div>
+<div class="card">Classical Poet</div>
 <div class="card">Actor</div>
-<div class="card">Poet</div>
+</div>
+</section>
+
+<section id="education">
+<h2>Education</h2>
+<div class="grid">
+<div class="card">Bachelor of Commerce – Tanta University</div>
+<div class="card">Theatre Arts – Helwan University</div>
+<div class="card">Arab School of Cinema – Cairo</div>
 </div>
 </section>
 
 <section id="skills">
 <h2>Skills</h2>
 <div class="grid">
-<div class="card">Video Editing</div>
-<div class="card">Content Creation</div>
-<div class="card">Social Media</div>
-<div class="card">AI Tools</div>
+<div class="card">Microsoft Office + SQL + Linux</div>
+<div class="card">CapCut – Canva – InShot – AI Tools</div>
 </div>
 </section>
 
@@ -212,6 +200,7 @@ padding:20px;
 <div style="text-align:center;margin-bottom:20px;">
 <button class="btn" onclick="openTab('rest')">Restaurants</button>
 <button class="btn" onclick="openTab('cosmetics')">Cosmetics</button>
+<button class="btn" onclick="openTab('design')">Design</button>
 <button class="btn" onclick="openTab('ads')">Ads</button>
 </div>
 
@@ -228,6 +217,12 @@ padding:20px;
 </div>
 </div>
 
+<div id="design" class="tab-content">
+<div class="grid">
+<div class="card" onclick="openBrand('mokbel')">Mokbel</div>
+</div>
+</div>
+
 <div id="ads" class="tab-content">
 <div class="grid">
 <div class="card" onclick="openBrand('ads')">Ads Campaigns</div>
@@ -236,7 +231,6 @@ padding:20px;
 
 </section>
 
-<!-- Popup -->
 <div id="popup" onclick="closePopup()">
 <div class="popup-box" onclick="event.stopPropagation()">
 <h2 id="title"></h2>
@@ -249,7 +243,8 @@ padding:20px;
 <h2>Contact</h2>
 <div class="card">
 📍 Haram, Giza<br>
-📞 201115002997<br>
+📞 +201115002997<br>
+📞 +201002276455<br>
 ✉ Khalil.aayousef@gmail.com
 </div>
 </section>
@@ -266,14 +261,25 @@ document.getElementById(id).classList.add("active");
 
 function openBrand(b){
 const data={
-hirisk:{title:"Hi Risk",desc:"Restaurant",links:[["Instagram","#"]]},
-hameed:{title:"Hameed",desc:"Restaurant",links:[["Instagram","#"]]},
-ceramed:{title:"Ceramed",desc:"Cosmetics",links:[["Instagram","#"]]},
-ads:{title:"Ads",desc:"Campaigns",links:[["TikTok","#"]]}
+hirisk:{title:"Hi Risk",desc:"Restaurant & cafe",links:[
+["Instagram","https://www.instagram.com/hiriskcafe"],
+["TikTok","https://www.tiktok.com/@hi_risk1"]
+]},
+hameed:{title:"Hameed",desc:"Restaurant",links:[
+["Instagram","https://www.instagram.com/hameedegypt"]
+]},
+ceramed:{title:"Ceramed",desc:"Cosmetics",links:[
+["Instagram","https://www.instagram.com/ceramed.pharma"]
+]},
+mokbel:{title:"Mokbel",desc:"Design",links:[
+["Instagram","https://www.instagram.com/mokbeldesignco"]
+]},
+ads:{title:"Ads",desc:"Campaigns",links:[
+["TikTok","https://vt.tiktok.com/ZSHY1pSfk/"]
+]}
 };
 
 let item=data[b];
-
 document.getElementById("title").innerText=item.title;
 document.getElementById("desc").innerText=item.desc;
 
