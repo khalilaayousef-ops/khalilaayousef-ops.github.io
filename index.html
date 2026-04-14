@@ -6,6 +6,7 @@
 <title>Khalil Ayman | Portfolio</title>
 
 <style>
+/* Background */
 body{
 margin:0;
 font-family:Arial;
@@ -24,13 +25,18 @@ justify-content:center;
 align-items:center;
 text-align:center;
 }
+
 h1{
 font-size:48px;
 background: linear-gradient(to right,#38bdf8,#22c55e);
 -webkit-background-clip:text;
 color:transparent;
 }
-header p{color:#cbd5e1;}
+
+header p{
+color:#cbd5e1;
+margin:5px 0;
+}
 
 .btn{
 margin-top:15px;
@@ -40,45 +46,55 @@ border:none;
 border-radius:8px;
 color:white;
 cursor:pointer;
+transition:.3s;
 }
 .btn:hover{background:#0ea5e9}
 
 /* Navbar */
-nav{background:#020617;position:sticky;top:0;}
-nav ul{display:flex;justify-content:center;list-style:none;}
+nav{
+background:#020617;
+position:sticky;
+top:0;
+}
+nav ul{
+display:flex;
+justify-content:center;
+list-style:none;
+margin:0;
+padding:0;
+}
 nav li{margin:0 15px;}
-nav a{color:white;padding:15px;display:block;}
+nav a{
+color:white;
+padding:15px;
+display:block;
+}
 nav a:hover{color:#38bdf8}
 
 /* Sections */
-section{max-width:1100px;margin:auto;padding:70px 20px;}
+section{
+max-width:1100px;
+margin:auto;
+padding:70px 20px;
+}
 h2{text-align:center;margin-bottom:30px}
 
 /* Grid */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:15px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
-/* Cards */
 .card{
 background:#1e293b;
-padding:15px;
+padding:20px;
 border-radius:12px;
 text-align:center;
-cursor:pointer;
 transition:.3s;
+cursor:pointer;
 }
 .card:hover{transform:translateY(-5px)}
-
-/* Achievements images */
-.card img{
-width:100%;
-height:200px;
-object-fit:cover;
-border-radius:10px;
-}
 
 /* Tabs */
 .tab-content{display:none;}
@@ -102,10 +118,9 @@ background:#1e293b;
 padding:25px;
 border-radius:10px;
 text-align:center;
-max-width:400px;
 }
 
-/* WhatsApp */
+/* WhatsApp Button */
 .whatsapp{
 position:fixed;
 bottom:25px;
@@ -119,29 +134,53 @@ border-radius:50px;
 color:white;
 text-decoration:none;
 font-weight:bold;
+box-shadow:0 8px 25px rgba(0,0,0,0.3);
+animation:float 2s infinite ease-in-out;
+z-index:999;
 }
+
 .whatsapp img{width:24px;}
+
+.whatsapp:hover{
+transform:scale(1.05);
+background:#1ebe5d;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-6px);}
+100%{transform:translateY(0);}
+}
+
+footer{
+background:#020617;
+text-align:center;
+padding:20px;
+}
 </style>
 </head>
 
 <body>
 
-<a href="https://wa.me/201115002997" target="_blank" class="whatsapp">
+<!-- WhatsApp -->
+<a href="https://wa.me/201115002997?text=Hello%20Khalil" target="_blank" class="whatsapp">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-<span>Chat</span>
+<span>Chat with me</span>
 </a>
 
 <header>
 <h1>Khalil Ayman Abdelaziz</h1>
-<p>Creative Content Creator</p>
-<p>Giza - Egypt</p>
-<a class="btn" href="#projects">View Work</a>
+<p>Creative Content Creator | Freelancer</p>
+<p>Haram St., Giza – Egypt</p>
+
+<a class="btn" href="#projects">View My Work</a>
+<a class="btn" href="#">Download CV</a>
 </header>
 
 <nav>
 <ul>
 <li><a href="#about">About</a></li>
-<li><a href="#achievements">Achievements</a></li>
+<li><a href="#skills">Skills</a></li>
 <li><a href="#projects">Works</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
@@ -157,29 +196,22 @@ font-weight:bold;
 </div>
 </section>
 
-<!-- Achievements -->
-<section id="achievements">
-<h2>Achievements</h2>
+<section id="skills">
+<h2>Skills</h2>
 <div class="grid">
-<img src="images/award1.jpg">
-<img src="images/award2.jpg">
-<img src="images/award3.jpg">
-<img src="images/award4.jpg">
-<img src="images/award5.jpg">
-<img src="images/award6.jpg">
-<img src="images/award7.jpg">
-<img src="images/award8.jpg">
+<div class="card">Video Editing</div>
+<div class="card">Content Creation</div>
+<div class="card">Social Media</div>
+<div class="card">AI Tools</div>
 </div>
 </section>
 
-<!-- Projects -->
 <section id="projects">
 <h2>Creative Works</h2>
 
-<div style="text-align:center;">
+<div style="text-align:center;margin-bottom:20px;">
 <button class="btn" onclick="openTab('rest')">Restaurants</button>
 <button class="btn" onclick="openTab('cosmetics')">Cosmetics</button>
-<button class="btn" onclick="openTab('design')">Design</button>
 <button class="btn" onclick="openTab('ads')">Ads</button>
 </div>
 
@@ -191,15 +223,15 @@ font-weight:bold;
 </div>
 
 <div id="cosmetics" class="tab-content">
+<div class="grid">
 <div class="card" onclick="openBrand('ceramed')">Ceramed</div>
 </div>
-
-<div id="design" class="tab-content">
-<div class="card" onclick="openBrand('mokbel')">Mokbel</div>
 </div>
 
 <div id="ads" class="tab-content">
-<div class="card" onclick="openBrand('ads')">Ads</div>
+<div class="grid">
+<div class="card" onclick="openBrand('ads')">Ads Campaigns</div>
+</div>
 </div>
 
 </section>
@@ -216,10 +248,15 @@ font-weight:bold;
 <section id="contact">
 <h2>Contact</h2>
 <div class="card">
-📞 01115002997<br>
+📍 Haram, Giza<br>
+📞 201115002997<br>
 ✉ Khalil.aayousef@gmail.com
 </div>
 </section>
+
+<footer>
+© 2026 Khalil Ayman
+</footer>
 
 <script>
 function openTab(id){
@@ -228,53 +265,11 @@ document.getElementById(id).classList.add("active");
 }
 
 function openBrand(b){
-
 const data={
-
-hirisk:{
-title:"Hi Risk",
-desc:"Restaurant in Tanta",
-links:[
-["Instagram","https://www.instagram.com/hiriskcafe"],
-["TikTok","https://www.tiktok.com/@hi_risk1"]
-]
-},
-
-hameed:{
-title:"Hameed",
-desc:"Restaurant",
-links:[
-["Instagram","https://www.instagram.com/hameedegypt"],
-["TikTok","https://www.tiktok.com/@hameedeg"]
-]
-},
-
-ceramed:{
-title:"Ceramed",
-desc:"Cosmetics",
-links:[
-["Instagram","https://www.instagram.com/ceramed.pharma"],
-["TikTok","https://www.tiktok.com/@ceramed.pharma"]
-]
-},
-
-mokbel:{
-title:"Mokbel Design",
-desc:"Architecture",
-links:[
-["Instagram","https://www.instagram.com/mokbeldesignco"],
-["TikTok","https://www.tiktok.com/@mokbel.designco"]
-]
-},
-
-ads:{
-title:"Ads",
-desc:"Campaigns",
-links:[
-["TikTok","https://vt.tiktok.com/ZSHY1pSfk/"]
-]
-}
-
+hirisk:{title:"Hi Risk",desc:"Restaurant",links:[["Instagram","#"]]},
+hameed:{title:"Hameed",desc:"Restaurant",links:[["Instagram","#"]]},
+ceramed:{title:"Ceramed",desc:"Cosmetics",links:[["Instagram","#"]]},
+ads:{title:"Ads",desc:"Campaigns",links:[["TikTok","#"]]}
 };
 
 let item=data[b];
