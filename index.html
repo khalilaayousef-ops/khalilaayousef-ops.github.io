@@ -84,6 +84,11 @@ cursor:pointer;
 }
 .card:hover{transform:translateY(-5px)}
 
+.card img{
+width:100%;
+border-radius:8px;
+}
+
 /* Skills */
 .skill{margin-bottom:12px;text-align:left;}
 .progress{background:#334155;height:8px;border-radius:5px;}
@@ -133,6 +138,7 @@ animation:float 2s infinite ease-in-out;
 z-index:999;
 }
 .whatsapp img{width:24px;}
+
 @keyframes float{
 0%{transform:translateY(0);}
 50%{transform:translateY(-6px);}
@@ -150,7 +156,7 @@ padding:20px;
 <body>
 
 <!-- WhatsApp -->
-<a href="https://wa.me/201115002997?text=Hello%20Khalil,%20I%20want%20to%20work%20with%20you"
+<a href="https://wa.me/201115002997?text=Hello%20Khalil%20I%20want%20to%20work%20with%20you"
 target="_blank" class="whatsapp">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
 <span>Chat with me</span>
@@ -170,6 +176,7 @@ target="_blank" class="whatsapp">
 <li><a href="#about">About</a></li>
 <li><a href="#education">Education</a></li>
 <li><a href="#skills">Skills</a></li>
+<li><a href="#achievements">Achievements</a></li>
 <li><a href="#projects">Works</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
@@ -222,6 +229,19 @@ target="_blank" class="whatsapp">
 </div>
 </section>
 
+<!-- Achievements -->
+<section id="achievements">
+<h2>Achievements & Awards</h2>
+<div class="grid">
+<img src="images/award1.jpg">
+<img src="images/award2.jpg">
+<img src="images/award3.jpg">
+<img src="images/award4.jpg">
+<img src="images/award5.jpg">
+<img src="images/award6.jpg">
+</div>
+</section>
+
 <!-- Projects -->
 <section id="projects">
 <h2>Creative Works</h2>
@@ -229,6 +249,10 @@ target="_blank" class="whatsapp">
 <div style="text-align:center;margin-bottom:20px;">
 <button class="btn" onclick="openTab('rest')">Restaurants</button>
 <button class="btn" onclick="openTab('cosmetics')">Cosmetics</button>
+<button class="btn" onclick="openTab('design')">Design</button>
+<button class="btn" onclick="openTab('shoes')">Shoes</button>
+<button class="btn" onclick="openTab('medical')">Medical</button>
+<button class="btn" onclick="openTab('barber')">Barber</button>
 <button class="btn" onclick="openTab('ads')">Ads</button>
 </div>
 
@@ -245,9 +269,33 @@ target="_blank" class="whatsapp">
 </div>
 </div>
 
+<div id="design" class="tab-content">
+<div class="grid">
+<div class="card" onclick="openBrand('mokbel')">Mokbel</div>
+</div>
+</div>
+
+<div id="shoes" class="tab-content">
+<div class="grid">
+<div class="card" onclick="openBrand('calzolaio')">Calzolaio</div>
+</div>
+</div>
+
+<div id="medical" class="tab-content">
+<div class="grid">
+<div class="card" onclick="openBrand('almoudawah')">Almoudawah</div>
+</div>
+</div>
+
+<div id="barber" class="tab-content">
+<div class="grid">
+<div class="card" onclick="openBrand('flebiny')">Flebiny</div>
+</div>
+</div>
+
 <div id="ads" class="tab-content">
 <div class="grid">
-<div class="card" onclick="openBrand('ads')">Advertisements</div>
+<div class="card" onclick="openBrand('ads')">Ads</div>
 </div>
 </div>
 
@@ -285,32 +333,35 @@ document.getElementById(id).classList.add("active");
 
 function openBrand(b){
 const data={
-hirisk:{
-title:"Hi Risk",
-desc:"Restaurant & Cafe",
-links:[["Instagram","https://www.instagram.com/hiriskcafe"]]
-},
-hameed:{
-title:"Hameed",
-desc:"Restaurant",
-links:[["Instagram","https://www.instagram.com/hameedegypt"]]
-},
-ceramed:{
-title:"Ceramed",
-desc:"Cosmetics",
-links:[["Instagram","https://www.instagram.com/ceramed.pharma"]]
-},
-ads:{
-title:"Advertisements",
-desc:"Campaigns",
-links:[["TikTok","#"]]
-}
+hirisk:{title:"Hi Risk",desc:"Restaurant",links:[
+["Instagram","https://www.instagram.com/hiriskcafe"],
+["TikTok","https://www.tiktok.com/@hi_risk1"]
+]},
+hameed:{title:"Hameed",links:[
+["Instagram","https://www.instagram.com/hameedegypt"]
+]},
+ceramed:{title:"Ceramed",links:[
+["Instagram","https://www.instagram.com/ceramed.pharma"]
+]},
+mokbel:{title:"Mokbel",links:[
+["Instagram","https://www.instagram.com/mokbeldesignco"]
+]},
+calzolaio:{title:"Calzolaio",links:[
+["Instagram","https://www.instagram.com/calzolaioegypt"]
+]},
+almoudawah:{title:"Almoudawah",links:[
+["Instagram","https://www.instagram.com/almoudawah"]
+]},
+flebiny:{title:"Flebiny",links:[
+["Instagram","https://www.instagram.com/flebiny_salon"]
+]},
+ads:{title:"Ads",links:[
+["TikTok","https://vt.tiktok.com/ZSHY1pSfk/"]
+]}
 };
 
 let item=data[b];
-
 document.getElementById("title").innerText=item.title;
-document.getElementById("desc").innerText=item.desc;
 
 let html="";
 item.links.forEach(l=>{
