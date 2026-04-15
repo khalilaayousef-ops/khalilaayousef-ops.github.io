@@ -113,7 +113,32 @@ justify-content:center;
 align-items:center;
 z-index:2000;
 }
+  
 .popup-box{
+#links{
+display:flex;
+flex-direction:column;
+gap:10px;
+margin-top:15px;
+}
+
+.link-btn{
+display:block;
+padding:10px;
+border-radius:8px;
+background:#0f172a;
+border:1px solid #334155;
+color:#38bdf8;
+text-decoration:none;
+font-weight:500;
+transition:.3s;
+}
+
+.link-btn:hover{
+background:#38bdf8;
+color:white;
+transform:translateY(-2px);
+}
 background:#1e293b;
 padding:25px;
 border-radius:10px;
@@ -490,7 +515,7 @@ document.getElementById("desc").innerText=item.desc;
 
 let html="";
 item.links.forEach(l=>{
-html+=`<a href="${l[1]}" target="_blank" class="btn">${l[0]}</a><br>`;
+html+=`<a href="${l[1]}" target="_blank" class="link-btn">${l[0]}</a>`;
 });
 
 document.getElementById("links").innerHTML=html;
