@@ -6,6 +6,7 @@
 <title>Khalil Ayman | Portfolio</title>
 
 <style>
+/* Background */
 body{
 margin:0;
 font-family:Arial;
@@ -15,6 +16,7 @@ background-image: radial-gradient(#1e3a8a 1px, transparent 1px);
 background-size:30px 30px;
 }
 
+/* Header */
 header{
 height:100vh;
 display:flex;
@@ -48,6 +50,7 @@ transition:.3s;
 }
 .btn:hover{background:#0ea5e9}
 
+/* Navbar */
 nav{
 background:#020617;
 position:sticky;
@@ -68,6 +71,7 @@ display:block;
 }
 nav a:hover{color:#38bdf8}
 
+/* Sections */
 section{
 max-width:1100px;
 margin:auto;
@@ -75,6 +79,7 @@ padding:70px 20px;
 }
 h2{text-align:center;margin-bottom:30px}
 
+/* Grid */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -91,9 +96,11 @@ cursor:pointer;
 }
 .card:hover{transform:translateY(-5px)}
 
+/* Tabs */
 .tab-content{display:none;}
 .tab-content.active{display:block}
 
+/* Popup */
 #popup{
 position:fixed;
 top:0;
@@ -106,14 +113,8 @@ justify-content:center;
 align-items:center;
 z-index:2000;
 }
+  
 .popup-box{
-background:#1e293b;
-padding:25px;
-border-radius:10px;
-text-align:center;
-}
-
-/* Links شكل احترافي */
 #links{
 display:flex;
 flex-direction:column;
@@ -138,7 +139,13 @@ background:#38bdf8;
 color:white;
 transform:translateY(-2px);
 }
+background:#1e293b;
+padding:25px;
+border-radius:10px;
+text-align:center;
+}
 
+/* WhatsApp Button */
 .whatsapp{
 position:fixed;
 bottom:25px;
@@ -180,14 +187,15 @@ padding:20px;
 
 <body>
 
-<a href="https://wa.me/201115002997" target="_blank" class="whatsapp">
+<!-- WhatsApp -->
+<a href="https://wa.me/201115002997?text=Hello%20Khalil" target="_blank" class="whatsapp">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
 <span>Chat with me</span>
 </a>
 
 <header>
 <h1>Khalil Ayman Abdelaziz</h1>
-<p>Creative Content Creator</p>
+<p>Creative Content Creator   </p>
 <p>Freelancer</p>
 
 <a class="btn" href="#projects">View My Work</a>
@@ -202,7 +210,6 @@ padding:20px;
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
-
 <section id="about">
 <h2>Career Highlights</h2>
 <div class="grid">
@@ -210,19 +217,147 @@ padding:20px;
 <div class="card">Author</div>
 <div class="card">Classical Poet</div>
 <div class="card">Drama Teacher</div>
-<div class="card">Copy Writer</div>
-<div class="card">Creative</div>
+  <div class="card">Copy Writer</div>
+  <div class="card">Creative</div>
 <div class="card">Reel Creator</div>
 <div class="card">Actor</div>
 </div>
 </section>
+<section id="education">
+<h2>Education</h2>
+<div class="grid">
+<div class="card">Bachelor of Commerce , English Section , Accounting Department – Tanta University</div>
+<div class="card">Faculty of Arts, Department of Theatre Arts, Acting and Directing Division, Helwan University</div>
+<div class="card">The Arab School of Cinema at the Higher Institute of Cinema, Cairo.</div>
+</div>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<div class="grid">
+<div class="card">
+<h3>Computer Programs</h3>
+<div class="skill">Microsoft Word<div class="progress"><div style="width:80%"></div></div></div>
+<div class="skill">Microsoft Excel<div class="progress"><div style="width:80%"></div></div></div>
+<div class="skill">Microsoft Powerpoint<div class="progress"><div style="width:80%"></div></div></div>
+<div class="skill">Microsoft Powerpoint<div class="progress"><div style="width:80%"></div></div></div>
+<div class="skill">SQL<div class="progress"><div style="width:85%"></div></div></div>
+<div class="skill">Linux<div class="progress"><div style="width:80%"></div></div></div>
+</div>
+
+<div class="card">
+<h3>Creative Tools</h3>
+<div class="skill">CapCutPro<div class="progress"><div style="width:95%"></div></div></div>
+<div class="skill">Canva Pro<div class="progress"><div style="width:90%"></div></div></div>
+<div class="skill">InShot<div class="progress"><div style="width:90%"></div></div></div>
+<div class="skill">Picsrt<div class="progress"><div style="width:90%"></div></div></div>
+<div class="skill">Photoroom<div class="progress"><div style="width:90%"></div></div></div>
+<div class="skill">Ai Tools<div class="progress"><div style="width:90%"></div></div></div>
+</div>
+</section>
+
+<section id="achievements">
+<h2>Achievements & Awards</h2>
+
+<div class="grid">
+<div class="card"><img src="images/award1.jpg" onclick="openImage(this.src)"><p> </p></div>
+<div class="card"><img src="images/award2.jpg" onclick="openImage(this.src)"><p> </p></div>
+<div class="card"><img src="images/award3.jpg" onclick="openImage(this.src)"><p></p></div>
+<div class="card"><img src="images/award4.jpg" onclick="openImage(this.src)"><p></p></div>
+<div class="card"><img src="images/award5.jpg" onclick="openImage(this.src)"><p></p></div>
+<div class="card"><img src="images/award6.jpg" onclick="openImage(this.src)"><p></p></div>
+<div class="card"><img src="images/award7.jpg" onclick="openImage(this.src)"><p></p></div>
+<div class="card"><img src="images/award8.jpg" onclick="openImage(this.src)"><p></p></div>
+<div class="card"><img src="images/award9.jpg" onclick="openImage(this.src)"><p></p></div>
+<div class="card"><img src="images/award22.jpg" onclick="openImage(this.src)"><p></p></div>
+<div class="card"><img src="images/award21.jpg" onclick="openImage(this.src)"><p></p></div>
+<div class="card"><img src="images/award25.jpg" onclick="openImage(this.src)"><p></p></div>
+<div class="card"><img src="images/award28.jpg" onclick="openImage(this.src)"><p></p></div>
+<div class="card"><img src="images/award32.jpg" onclick="openImage(this.src)"><p></p></div>
+<div class="card"><img src="images/award37.jpg" onclick="openImage(this.src)"><p></p></div>
+<div class="card"><img src="images/award38.jpg" onclick="openImage(this.src)"><p></p></div>
+<div class="card"><img src="images/award29.jpg" onclick="openImage(this.src)"><p></p></div>
+</div>
+</section>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khalil Ayman | Creative Portfolio</title>
+
+<style>
+  .whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+display:flex;
+align-items:center;
+gap:10px;
+padding:12px 18px;
+border-radius:50px;
+text-decoration:none;
+color:white;
+font-weight:500;
+box-shadow:0 8px 25px rgba(0,0,0,0.2);
+transition:0.3s;
+animation:float 2s infinite ease-in-out;
+z-index:999;
+}
+
+.whatsapp img{
+width:24px;
+}
+
+.whatsapp span{
+font-size:14px;
+}
+
+/* Hover */
+.whatsapp:hover{
+transform:scale(1.05);
+}
+
+</style>
+</head>
+
+  <a href="https://wa.me/201115002997?text=Hello%20Khalil,%20I%20saw%20your%20portfolio%20and%20want%20to%20work%20with%20you"
+target="_blank" class="whatsapp">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+<span>Chat with me</span>
+</a>
+<body>
+<header>
+<h1>Khalil Ayman Abdelaziz</h1>
+<p>Creative Content Creator | Freelancer</p>
+<p>Haram St., Giza – Egypt</p>
+
+<a class="btn" href="#projects">View My Work</a>
+<a class="btn" href="Khalil_Ayman_CV.pdf" download>Download CV</a>
+</header>
+<nav>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#achievements">Achievements</a></li>
+<li><a href="#projects">Works</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
 
 <section id="projects">
 <h2>Creative Works</h2>
-
-<div style="text-align:center;margin-bottom:20px;">
+<div style="text-align:center;margin-bottom:30px;">
 <button class="btn" onclick="openTab('rest')">Restaurants</button>
 <button class="btn" onclick="openTab('cosmetics')">Cosmetics</button>
+<button class="btn" onclick="openTab('design')">Design</button>
+<button class="btn" onclick="openTab('shoes')">Shoes</button>
+<button class="btn" onclick="openTab('medical')">Medical</button>
+<button class="btn" onclick="openTab('Barbershops')">Barbershops</button>
+  <button class="btn" onclick="openTab('vehicle')">Vehicle Repair Shops</button>
 <button class="btn" onclick="openTab('ads')">Ads</button>
 </div>
 
@@ -239,15 +374,45 @@ padding:20px;
 </div>
 </div>
 
+<div id="design" class="tab-content">
+<div class="grid">
+<div class="card" onclick="openBrand('mokbel')">Mokbel Design</div>
+</div>
+</div>
+
+<div id="shoes" class="tab-content">
+<div class="grid">
+<div class="card" onclick="openBrand('calzolaio')">Calzolaio</div>
+</div>
+</div>
+
+<div id="medical" class="tab-content">
+<div class="grid">
+<div class="card" onclick="openBrand('almoudawah')">Almoudawah</div>
+</div>
+</div>
+
+<div id="barbershops" class="tab-content">
+<div class="grid">
+<div class="card" onclick="openBrand('flebiny')">Flebiny Salon</div>
+</div>
+</div>
+
+  <div id="vehicle Repair Shops" class="tab-content">
+<div class="grid">
+<div class="card" onclick="openBrand('motor')">MOTOR</div>
+</div>
+</div>
+  
 <div id="ads" class="tab-content">
 <div class="grid">
-<div class="card" onclick="openBrand('ads')">Ads Campaigns</div>
-<div class="card" onclick="openBrand('motor')">MOTOR</div>
+<div class="card" onclick="openBrand('ads')">Advertisements</div>
 </div>
 </div>
 
 </section>
 
+<!-- Popup -->
 <div id="popup" onclick="closePopup()">
 <div class="popup-box" onclick="event.stopPropagation()">
 <h2 id="title"></h2>
@@ -256,19 +421,6 @@ padding:20px;
 </div>
 </div>
 
-<section id="contact">
-<h2>Contact</h2>
-<div class="card">
-📍 Haram, Giza<br>
-📞 201115002997<br>
-✉ Khalil.aayousef@gmail.com
-</div>
-</section>
-
-<footer>
-© 2026 Khalil Ayman
-</footer>
-
 <script>
 function openTab(id){
 document.querySelectorAll(".tab-content").forEach(t=>t.classList.remove("active"));
@@ -276,49 +428,97 @@ document.getElementById(id).classList.add("active");
 }
 
 function openBrand(b){
+
 const data={
 
 hirisk:{
 title:"Hi Risk",
-desc:"Restaurant",
+desc:"Restaurant & cafe in Tanta.",
 links:[
-["Instagram","https://www.instagram.com/hiriskcafe"],
-["TikTok","https://www.tiktok.com/@hi_risk1"]
-]
-},
-
-hameed:{
-title:"Hameed",
-desc:"Restaurant",
-links:[
-["Instagram","https://www.instagram.com/hameedegypt"],
-["TikTok","https://www.tiktok.com/@hameedeg"]
+["Instagram","https://www.instagram.com/hiriskcafe?utm_source=ig_web_button_share_sheet"],
+["TikTok","https://www.tiktok.com/@hi_risk1"],
+["Facebook","https://www.facebook.com"]
 ]
 },
 
 ceramed:{
 title:"Ceramed",
-desc:"Cosmetics",
+desc:"Cosmetics shop.",
 links:[
 ["Instagram","https://www.instagram.com/ceramed.pharma"],
-["TikTok","https://www.tiktok.com/@ceramed.pharma"]
+["TikTok","https://www.tiktok.com/@ceramed.pharma"],
+["Facebook","https://www.facebook.com"]
 ]
 },
 
-ads:{
-title:"Ads Campaigns",
-desc:"Creative campaigns",
+hameed:{
+title:"Hameed",
+desc:"Restaurant.",
 links:[
-["TikTok Ad","https://vt.tiktok.com/ZSHY1pSfk/"]
+["Instagram","https://www.instagram.com/hameedegypt"],
+["TikTok","https://www.tiktok.com/@hameedeg"],
+["Facebook","https://www.facebook.com"]
 ]
 },
 
-motor:{
+mokbel:{
+title:"Mokbel Design & Architecture",
+desc:"Design & Architecture content.",
+links:[
+["Instagram","https://www.instagram.com/mokbeldesignco"],
+["TikTok","https://www.tiktok.com/@mokbel.designco"],
+["Facebook","https://www.facebook.com"]
+]
+},
+
+calzolaio:{
+title:"Calzolaio",
+desc:"Italian storytelling content.",
+links:[
+["Instagram","https://www.instagram.com/calzolaioegypt"],
+["TikTok","https://www.tiktok.com/@calzolaioegypt"],
+["Facebook","https://www.facebook.com"]
+]
+},
+
+almoudawah:{
+title:"Almoudawah Center",
+desc:"Physiotherapy & rehabilitation.",
+links:[
+["Instagram","https://www.instagram.com/almoudawah"],
+["TikTok","https://www.tiktok.com/@almoudawah11"],
+["Facebook","https://www.facebook.com"]
+]
+},
+
+flebiny:{
+title:"Flebiny Salon",
+desc:"Professional barbershop for celebrities.",
+links:[
+["Work","https://drive.google.com/drive/folders/1cU50kiA03-uOSvTkqK-fW02kgTCDMX7G"],
+["Facebook","https://www.facebook.com/share/1EzSyaTWBh/"],
+["Instagram","https://www.instagram.com/flebiny_salon"],
+["TikTok","https://www.tiktok.com/@flebinysalon"]
+]
+},
+
+  motor:{
 title:"MOTOR",
-desc:"Vehicle service · Vehicle Repair Shop",
+desc:"Vehicle service",
 links:[
-["Facebook Page 1","https://web.facebook.com/Mtor.company?_rdc=1&_rdr#"],
-["Facebook Page 2","https://web.facebook.com/InstaParts.co?_rdc=1&_rdr#"]
+["Mtor Company","https://web.facebook.com/Mtor.company?_rdc=1&_rdr#"],
+["InstaParts","https://web.facebook.com/InstaParts.co?_rdc=1&_rdr#"]
+]
+},
+  
+ads:{
+title:"Advertisements",
+desc:"Creative campaigns.",
+links:[
+["Christmas","https://vt.tiktok.com/ZSHY1pSfk/"],
+["Novels","https://drive.google.com/file/d/1X-ASf6_zbiyZjJ6jNUF1tGXlCmvJr87l/view"],
+["Halan","https://drive.google.com/file/d/16WOXSdBURBaNYtBwVX0eapmpQwrLS7IQ/view"],
+["Vlog","https://drive.google.com/file/d/1aeLtUCkgWUGnuYmayYFvfFtHO6Fvd8n-/view"]
 ]
 }
 
@@ -345,3 +545,18 @@ document.getElementById("popup").style.display="none";
 
 </body>
 </html>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<div class="card">
+📍 Haram,Giza, Egypt<br>
+📞 +201115002997<br>
+📞 +201002276455<br>
+✉ Khalil.aayousef@gmail.com
+</div>
+</section>
+
+<footer>
+© 2026 Khalil Ayman
+</footer>
